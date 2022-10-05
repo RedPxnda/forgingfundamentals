@@ -136,13 +136,40 @@ repositories {
     maven {
         url 'https://www.cursemaven.com'
     }
+    maven {
+        url 'https://api.modrinth.com/maven'
+    }
+    maven {
+        name "KosmX's maven"
+        url 'https://maven.kosmx.dev/'
+    }
+    maven {
+        name = "KliKli Dev Repsy Maven"
+        url = "https://repo.repsy.io/mvn/klikli-dev/mods"
+    }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.80'
 
-    implementation fg.deobf("curse.maven:tetra-289712:3844400")
+    implementation fg.deobf("curse.maven:tetra-289712:4018384")
     implementation fg.deobf("curse.maven:mutil-351914:3788376")
+    implementation fg.deobf("curse.maven:tetrutils-678779:4000854")
+
+    //tetratic combat
+    runtimeOnly(fg.deobf('curse.maven:tetratic-665884:3995490'))
+
+    //Modonomicon
+    compileOnly fg.deobf("com.klikli_dev:modonomicon:1.18.2-1.4.0:api")
+    runtimeOnly fg.deobf("com.klikli_dev:modonomicon:1.18.2-1.4.0")
+
+    //better combat
+    runtimeOnly(("curse.maven:cloth-348521:3782776"))
+
+    runtimeOnly(fg.deobf('maven.modrinth:better-combat:1.4.4+1.18.2-forge'))
+    runtimeOnly(fg.deobf("maven.modrinth:better-combat:1.4.4+1.18.2-forge"))
+
+    runtimeOnly(fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:0.3.5"))
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
